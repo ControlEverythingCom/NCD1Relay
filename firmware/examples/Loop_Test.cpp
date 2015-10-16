@@ -1,7 +1,7 @@
 /* Includes ------------------------------------------------------------------*/
-#include "application.h"
+#include "NCD1Relay/NCD1Relay.h"
 
-SYSTEM_MODE(MANUAL);
+SYSTEM_MODE(AUTOMATIC);
 
 NCD1Relay relayController;
 
