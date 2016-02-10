@@ -1,7 +1,7 @@
 // This #include statement was automatically added by the Particle IDE.
 #include "NCD1Relay/NCD1Relay.h"
 
-#include "NCD1Relay/MQTT/MQTT.h"
+#include "NCD1Relay/MQTT.h"
 
 void callback(char* topic, byte* payload, unsigned int length);
 
