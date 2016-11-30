@@ -1,0 +1,36 @@
+// This #include statement was automatically added by the Particle IDE.
+#include "NCD1Relay/NCD1Relay.h"
+
+NCD1Relay relayController;
+
+void movementHandler(const char *event, const char *data);
+
+unsigned long lastUpdate;
+
+unsigned long updateTimeout = 30000;
+
+/* This function is called once at start up ----------------------------------*/
+void setup()
+{
+	relayController.setAddress(0,0,0);
+	
+	Particle.subscribe("Movement", movementHandler);
+}
+
+/* This function loops forever --------------------------------------------*/
+void loop()
+{
+    if(millis() > updateTimeout + lastUpdate && relayController.readRelayStatus() == 1){
+        relayController.turnOffRelay();
+    }
+}
+
+void movementHandler(const char *event, const char *data){
+    String eventData = String(data);
+    if(eventData.equalsIgnoreCase("Moved")){
+        lastUpdate = millis();
+        if(relayController.readRelayStatus() == 0){
+            relayController.turnOnRelay();
+        }
+    }
+}
