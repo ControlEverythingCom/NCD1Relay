@@ -25,7 +25,7 @@ Once the Library is included in your applicaiton you should see an include state
 //This #include statement was automatically added by the Particle IDE.
 #include "NCD1Relay/NCD1Relay.h"
 ```
-Now you need to instanciate an object of the library for use in your application like this:
+Now you need to instantiate an object of the library for use in your application like this:
 ```cpp
 NCD1Relay relayController;
 ```
