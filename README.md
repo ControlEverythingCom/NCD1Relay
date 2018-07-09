@@ -32,7 +32,6 @@ Once the Library is included in your application you should see an include state
 ```
 
 Now you need to instanciate an object of the library for use in your application like this:
-
 ```cpp
 NCD1Relay relayController;
 ```
